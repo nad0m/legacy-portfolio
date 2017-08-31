@@ -1,0 +1,24 @@
+.box {
+  position: relative;
+  width: 450px;
+  padding: 40px 50px;
+  margin: 3% auto auto auto;
+  display: table;
+  border: 0;
+  border-radius: 10px;
+  background: #333;
+  opacity: .9;
+  -webkit-box-shadow: 0px 0px 10px black;
+  box-shadow: 0px 0px 10px black;
+  color: white;
+  text-align: center;
+  font-size: 250%;
+  font-family:Verdana;
+}
+h1{
+  font-size: 500%;
+  font-family:Verdana;
+}
+body{
+  background-size:cover;
+}

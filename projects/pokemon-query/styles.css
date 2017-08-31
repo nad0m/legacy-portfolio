@@ -1,0 +1,199 @@
+<style>
+			#wrapper {
+				width:900px;
+				margin:0px auto;
+				border: 5px solid;
+				background: lightgrey;
+				padding:10px;
+				font-family: "Trebuchet MS";
+				text-align:center;
+
+		}
+			a {text-decoration: none; }
+			h2 {
+				text-align:center;
+				font-family: "Comic Sans MS";
+			
+		}
+
+			#tableInfo {
+				background: white;
+				padding:5px;
+				font-family: "Trebuchet MS";
+				text-align:center;
+		
+		}
+		
+			#link {
+				background: transparent;
+				font-family: "Trebuchet MS";
+				border: 1px solid;
+				cursor: pointer;
+				width: 100px
+			}
+			#normal {
+				background: beige;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#fighting {
+				background: lightcoral;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#flying {
+				background: palegoldenrod;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#poison {
+				background: plum;
+				padding:1px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#ground {
+				background: peru;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#rock {
+				background: slategray;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#bug {
+				background: palegreen;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#ghost {
+				background: darkmagenta;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#steel {
+				background: silver;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#fire {
+				background: tomato;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#water {
+				background: lightskyblue;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#grass {
+				background: green;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#electric {
+				background: gold;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#psychic {
+				background: rebeccapurple;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#ice {
+				background: azure;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#dragon {
+				background: firebrick;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+
+			#fairy {
+				background: lightpink;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+			#size {
+				background: darkgrey;
+				padding:5px;
+				font-family: "Trebuchet MS";
+		
+		}
+		
+		fieldset {
+
+  				 margin: auto;
+				 width:50%;
+
+  				 text-align:center;
+
+
+		}
+		#logout {
+
+  				 margin: auto;
+				 width:10%;
+  				 text-align:center;
+  				 float:right;
+  				 font-family: "Trebuchet MS";
+  				 font-size:smaller;
+
+
+		}
+		#sortMethod {
+			margin: auto;
+				 width:33%;
+
+  				 text-align:center;
+
+		}
+		
+		.main-header {
+  				text-align: center;
+
+		}
+		
+		footer { 	
+				text-align: center;
+				font-size: .85em;
+				background-color: white;
+				margin: .5em 0;
+				padding: .25em 0;
+
+
+
+		}
+		.box{
+			background-color:darkgrey;
+			width:20%;
+
+		}
+		img{
+			height:25%;
+		}
+		
+
+
+		
+</style>

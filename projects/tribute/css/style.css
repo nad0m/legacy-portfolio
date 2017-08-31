@@ -1,0 +1,19 @@
+#wrapper{
+  background:lightgrey;
+  text-align:center;
+  width:1000px;
+	margin:0px auto;
+	border: 2px solid;
+  text-margin:30px;
+  
+}
+.img{
+  background:white;
+  margin-right: 250px;
+  margin-left: 250px;
+  padding:10px;
+}
+li{
+  margin-right:40px;
+  margin-left: 40px;
+}

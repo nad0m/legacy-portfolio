@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Random Quote Generator - Huy Nguyen</title>
+  <meta name="description" content="">
+  <meta name="author" content="Overlord">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/714f03981d.js"></script>
+  
+  <style>
+  	.box {
+  position: relative;
+  margin: 8% auto auto auto;
+  width: 450px;
+  padding: 40px 50px;
+  display: table;
+  border: 0;
+  border-radius: 10px;
+  background: #333;
+  opacity: .9;
+  box-shadow: inset 0 0 10px #000000;
+  color: #39C442;
+  text-align: center;
+}
+
+.box2 {
+  padding-top: 10px;
+  text-align: center;
+}
+
+tab {
+  padding-left: 14em;
+}
+
+tab2 {
+  padding-left: .6em;
+}
+
+body {
+  padding-bottom: 70px;
+  background-image: url('http://i.imgur.com/XUWWjqa.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: translate;
+}
+
+footer {
+  text-align: center;
+}
+
+.button {
+  height: 38px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #39C442;
+  outline: none;
+  font-size: 0.85em;
+  padding: 8px 18px 6px 18px;
+  margin-top: 30px;
+  opacity: 1;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.button:hover {
+  opacity: 0.9;
+  text-decoration: none;
+  color: #fff
+}
+
+#tweet {
+  background: #1DA1F2;
+  text-decoration: none;
+}
+  
+  </style>
+</head>
+
+<!--------------------------------------------------->
+
+<body>
+
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  <div class="box container">
+    <div class="message">
+      Welcome to the Random Quote Generator.</br>
+      </br>
+      Click "New Quote" to start.
+    </div>
+
+  </div>
+
+
+    <div class="box2">
+      <a type="button" class="button" id="getQuote">New Quote
+</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a target="_blank" class="button" type="button" id="tweet"><i class="fa fa-twitter"></i><tab2>Tweet Quote</tab2></a></div>
+
+
+ <footer class="navbar-fixed-bottom text-center">
+  <div class "container">
+
+    <p style="color:white;">Designed and developed by Huy Nguyen © 2016. Quotes taken from Forismatic API. All rights reserved. </p>
+
+
+</footer>
+
+
+
+<script>
+$("document").ready(function() {
+
+  $("#getQuote").on("click", function() {
+    var request = $.ajax({
+      url: '//api.forismatic.com/api/1.0/',
+      jsonp: 'jsonp',
+      dataType: 'jsonp',
+      data: {
+        method: 'getQuote',
+        lang: 'en',
+        format: 'jsonp',
+      },
+    })
+
+    request.done(function(msg) {
+      $("#log").html(msg);
+      var quoteText = msg.quoteText;
+      var author = msg.quoteAuthor;
+      $(".message").html('<i><b>"' + quoteText + '"</b>' + "</br></br></i><tab> -- " + author + "</tab>");
+
+      $("#tweet").attr("href", "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" + encodeURIComponent(quoteText + " - " + author));
+
+    });
+  });
+
+});
+  	
+  </script>
+
+    
+
+</body>
+</html>

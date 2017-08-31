@@ -1,0 +1,66 @@
+body {
+  background: white;
+}
+
+h1 {
+  color: #6441A5;
+  text-align: center;
+  margin-top: 35px;
+  font-family: Verdana;
+}
+
+.bar {
+  color: #6441A5;
+  font-size: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.entry,
+.entryOffline {
+  background: white;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  -webkit-box-shadow: 0px 0px 10px dimgrey;
+  box-shadow: 0px 0px 10px dimgrey;
+  width: 80%;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin: 11%;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 0px 10px dimgrey;
+  box-shadow: 0px 0px 10px dimgrey;
+}
+
+.hide {
+  display: none;
+}
+
+.filter:hover {
+  cursor: pointer;
+}
+
+.link {
+  margin: 5% 1% 5% 5%;
+  text-decoration: none !important;
+  font-size: 18px;
+}
+
+p {
+  margin: 3% 3% 3% 3%;
+}
+
+h4 {
+  margin: 3% 3% 3% 3%;
+}
+
+.preview {
+  width: 180px;
+  height: auto;
+  margin: 11%;
+  -webkit-box-shadow: 0px 0px 10px dimgrey;
+  box-shadow: 0px 0px 10px dimgrey;
+}
