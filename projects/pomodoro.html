@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Pomodoro Clock</title>
+  <meta name="description" content="">
+  <meta name="author" content="Overlord">
+
+  <meta name="viewport" content="width=device-width; initial-scale=.7">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/714f03981d.js"></script>
+
+<style>
+	body {
+  background: #22262B;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+button {
+  background: #22262B;
+  border: none;
+}
+
+.circle {
+  width: 500px;
+  height: 500px;
+  border: 1px solid skyblue;
+  margin: 0 auto;
+  margin-top: 3%;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 120px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 15%;
+}
+
+#textBox {
+  font-size: 26px;
+}
+
+#timeBox {
+  font-size: 36px;
+  margin-top: 20px;
+}
+
+.row {
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 150%;
+  margin-top: 50px;
+}
+	
+</style>
+
+
+</head>
+
+
+<body>
+	<h1>Pomodoro Clock</h1>
+
+<div class="row">
+  <div class="col-xs-4">
+    Break Length (minutes)
+    </br><button class="breakMinus">-</button><span class="break"></span><button class="breakAdd">+</button>
+  </div>
+  
+  <button class="col-xs-4 reset">Reset Time</button>
+  
+  <div class="col-xs-4">
+    Session Length (minutes)
+    </br><button class="sessionMinus">-</button><span class="session"></span><button class="sessionAdd">+</button>
+  </div>
+</div>
+
+
+<div class="circle">
+  <span id="textBox">Session</span>
+
+  <div id="timeBox"></div>
+
+</div>
+
+
+<div class="footer text-center">
+  <p style="color:white;">Designed and developed by Huy Nguyen © 2016. All rights reserved.</p>
+</div>
+	
+	
+
+</body>
+</html>
+
+
+<script>
+$(document).ready(function() {
+  var breakLength = 5;
+  var sessionLength = 25;
+  var s = 0;
+  var m = sessionLength;
+  var pause = true;
+  var timer;
+  var fill = 0;
+  var white = 1;
+  var percentage;
+
+  $(".break").text(breakLength);
+  $(".session").text(sessionLength);
+  $("#timeBox").text(sessionLength + ":00");
+
+  $(".circle").click(function() {
+
+    percentage = 1000 / (sessionLength * 60000);
+
+    if (pause) {
+      timer = setInterval(update, 1000);
+      pause = false;
+    } else {
+      clearInterval(timer);
+      pause = true;
+    }
+
+  });
+
+  function breakStart() {
+
+    percentage = 1000 / (breakLength * 60000);
+    $("#textBox").text("Break");
+    $("#timeBox").text(breakLength + ":00");
+    m = breakLength;
+
+  }
+
+  function update() {
+    if (m == 0 && s == 0 && document.getElementById("textBox").innerHTML == "Break") {
+      $("#textBox").text("Session");
+      percentage = 1000 / (sessionLength * 60000);
+      m = sessionLength;
+      s = 0;
+
+    }
+
+    if (m == 0 && s == 0) {
+      breakStart();
+    }
+    if (s == 0) {
+      s = 60;
+    }
+
+    s--;
+
+    if (s == 59) {
+      m--;
+    }
+
+    if (s < 10) {
+      s = "0" + s;
+    }
+    $("#timeBox").text(m + ":" + s);
+
+    if (document.getElementById("textBox").innerHTML == "Session") {
+      fill += (percentage * 100);
+      white -= (percentage * 100);
+    } else {
+      fill -= (percentage * 100);
+      white += (percentage * 100);
+    }
+
+    $(".circle").css("background", "-webkit-linear-gradient(bottom, #39C442 " + fill + "%, #22262B " + white + "%)");
+    $(".circle").css("background", "-moz-linear-gradient(bottom, #39C442 " + fill + "%, #22262B " + white + "%)");
+    $(".circle").css("background", "-ms-linear-gradient(bottom, #39C442 " + fill + "%, #22262B " + white + "%)");
+    $(".circle").css("background", "linear-gradient(bottom, #39C442 " + fill + "%, #22262B " + white + "%)");
+
+  }
+
+  $(".breakMinus").click(function() {
+    if (breakLength > 1) {
+      breakLength -= 1;
+      $(".break").text(breakLength);
+    }
+  });
+
+  $(".breakAdd").click(function() {
+    breakLength += 1;
+    $(".break").text(breakLength);
+
+  });
+
+  $(".sessionMinus").click(function() {
+    if (sessionLength > 1) {
+      sessionLength -= 1;
+      $(".session").text(sessionLength);
+      $("#timeBox").text(sessionLength + ":00");
+      m = sessionLength;
+    }
+  });
+
+  $(".sessionAdd").click(function() {
+    sessionLength += 1;
+    $(".session").text(sessionLength);
+    $("#timeBox").text(sessionLength + ":00");
+    m = sessionLength;
+
+  });
+  
+  $(".reset").click(function () {
+
+    clearInterval(timer);
+    pause = true;
+    $("#textBox").text("Session");
+    $(".session").text(sessionLength);
+    $("#timeBox").text(sessionLength + ":00");
+    m = sessionLength;
+    s = 0;
+    fill = 0;
+    white = 1;
+    
+
+    $(".circle").css("background", "none");
+    
+    
+  });
+
+});
+</script>

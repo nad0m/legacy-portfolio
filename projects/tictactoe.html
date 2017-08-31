@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Tic-Tac-Toe</title>
+  <meta name="description" content="">
+  <meta name="author" content="Overlord">
+
+  <meta name="viewport" content="width=device-width; initial-scale=0.7">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+   
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/714f03981d.js"></script>
+
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald');
+
+body{
+  background:#c7b793;
+}
+
+.cover{
+  background:#587272;
+  width:450px;
+  height:450px;
+  margin: 0px auto;
+  border-radius:2%;
+  font-size: 40px;
+  text-align:center;
+  position:absolute;
+  padding-top:30%;
+  color:white;  
+}
+
+.result{
+  background:#587272;
+  width:450px;
+  height:450px;
+  margin: 0px auto;
+  border-radius:2%;
+  font-size: 40px;
+  text-align:center;
+  position:absolute;
+  padding-top:30%;
+  color:black;
+  opacity:0.9;
+  z-index: 2000;
+  display:none;
+}
+
+
+
+.selection{
+  margin: 10px auto;
+  border-radius:2%;
+  width:450px;
+  height:450px;
+  position:relative;
+  background:#2F4F4F;
+  margin-bottom:200px;
+}
+.notLink:hover{
+  cursor:pointer;
+  color:black;
+}
+
+.board{
+  margin:0 auto;
+
+  visibility:hidden;  
+}
+
+.col-xs-4{
+  border:5px solid white;
+  width:150px;
+  height:150px;
+  font-size:100px;
+  color:white;
+  text-align:center;
+}
+.col-xs-4:hover{
+  cursor:pointer;
+}
+
+.top{
+  border-top:transparent;
+
+}
+.left{
+  border-left:transparent;
+}
+.right{
+  border-right:transparent;
+}
+.bottom{
+  border-bottom:transparent;
+}
+.not-active {
+   pointer-events: none;
+   cursor: default;
+}
+
+.resetPage{
+  margin:20px auto;
+  width:80px;
+  height:20px;
+  background:#587272;
+  color: white;
+  text-align:center;
+  cursor:pointer;
+  
+}
+
+.resetPage:active{
+  transform: translateY(1px);
+}
+
+
+h2{
+  font-family:Alfa Slab One, cursive;
+  text-align:center;
+}
+
+</style>
+
+
+</head>
+
+<body>
+  <h2>Tic-Tac-Toe</h2>
+
+<div class="resetPage">Reset</div>
+
+  
+
+<div class="selection">
+  
+ <div class="cover">
+    <p>Choose:</p>
+    
+    <span class="notLink x">X</span>&nbsp;&nbsp;
+    <span>or</span>&nbsp;&nbsp;
+    <span class="notLink o">O</span>
+    
+  </div>
+  
+  <div class="result">
+    <p id="victor"></p>
+    
+    <p class="notLink resetPage">Retry?</p>
+    
+    
+  </div>
+  
+
+  
+  <div class="row board">
+  <div class="box box1 top left col-xs-4"></div>
+  <div class="box box2 top col-xs-4"></div>
+  <div class="box box3 top right col-xs-4"></div>
+  </div>
+  
+  <div class="row board">
+  <div class="box box4 left col-xs-4"></div>
+  <div class="box box5 col-xs-4"></div>
+  <div class="box box6 right col-xs-4"></div>
+  </div>
+ 
+  <div class="row board">
+  <div class="box box7 bottom left col-xs-4"></div>
+  <div class="box box8 bottom col-xs-4"></div>
+  <div class="box box9 bottom right col-xs-4"></div>
+  </div>
+  
+  
+  </div>
+
+<div class="footer text-center">
+  <p style="color:black;">Designed and developed by Huy Nguyen © 2016. All rights reserved.</p>
+</div>
+
+</body>
+</html>
+
+
+<script>
+	$(document).ready(function() {
+
+  var playerArr = [];
+  var computerArr = [];
+  var used = [];
+  var playerSymbol;
+  var computerSymbol;
+  var i = 0;
+  var j = 0;
+  var win = false;
+  var winArr = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [3, 5, 7]
+  ]
+
+  $(".x").click(function() { // player goes first
+    $(".cover").hide('slide', {
+      direction: 'down'
+    }, 1000);
+    $(".board").css('visibility', "visible");
+    computerSymbol = "O";
+    playerSymbol = "X";
+
+  });
+
+  $(".o").click(function() { // computer goes first
+    $(".cover").hide('slide', {
+      direction: 'down'
+    }, 1000);
+    $(".board").css('visibility', "visible");
+    computerSymbol = "X";
+    playerSymbol = "O";
+    computerTurn();
+
+  });
+
+  $(".resetPage").click(function() {
+    $(".cover").show('slide', {
+      direction: 'down'
+    }, 1000);
+    $(".board").css('visibility', "hidden");
+    $(".box").removeClass("not-active");
+    $(".box").text("");
+    $(".result").css('display', "none");
+    playerArr = [];
+    computerArr = [];
+    used = [];
+    i = 0;
+
+  });
+
+  function checkWin(arr) {
+
+    for (j = 0; j < winArr.length; j++) {
+      win = arr.filter(function(elem) {
+        return winArr[j].indexOf(elem) > -1;
+      }).length == 3;
+
+      if (win) {
+        return true;
+      }
+    }
+    console.log(arr);
+    return false;
+
+  }
+
+  function computerTurn() {
+    if (checkWin(playerArr)) {
+      $(".box").addClass("not-active");
+      $(".result").show('slide', {
+        direction: 'up'
+      }, 1000);
+      $("#victor").text("You win!");
+      return;
+    }
+
+    for (i = 1; i < 10; i++) {
+
+      if (jQuery.inArray(i, used) == -1) {               
+        $(".box" + i).text(computerSymbol);
+        used.push(i);
+        computerArr.push(i);
+        $(".box" + i).addClass("not-active");
+
+        break;
+      }   
+
+    }
+
+    if (checkWin(computerArr)) {
+      $(".box").addClass("not-active");
+      $(".result").show('slide', {
+        direction: 'up'
+      }, 1000);
+      $("#victor").text("Computer wins!");
+    } else if (used.length == 9) {
+      $(".box").addClass("not-active");
+      $(".result").show('slide', {
+        direction: 'up'
+      }, 1000);
+      $("#victor").text("Draw!");
+
+    }
+
+  }
+
+  $(".box1").click(function() { //1    
+    $(".box1").text(playerSymbol);
+    $(".box1").addClass("not-active");
+    used.push(1);
+    playerArr.push(1);
+
+    computerTurn();
+
+  });
+
+  $(".box2").click(function() { //1    
+    $(".box2").text(playerSymbol);
+    $(".box2").addClass("not-active");
+    used.push(2);
+    playerArr.push(2);
+
+    computerTurn();
+  });
+
+  $(".box3").click(function() { //1    
+    $(".box3").text(playerSymbol);
+    $(".box3").addClass("not-active");
+    used.push(3);
+    playerArr.push(3);
+
+    computerTurn();
+  });
+
+  $(".box4").click(function() { //1    
+    $(".box4").text(playerSymbol);
+    $(".box4").addClass("not-active");
+    used.push(4);
+    playerArr.push(4);
+
+    computerTurn();
+  });
+
+  $(".box5").click(function() { //1    
+    $(".box5").text(playerSymbol);
+    $(".box5").addClass("not-active");
+    used.push(5);
+    playerArr.push(5);
+
+    computerTurn();
+  });
+
+  $(".box6").click(function() { //1    
+    $(".box6").text(playerSymbol);
+    $(".box6").addClass("not-active");
+    used.push(6);
+    playerArr.push(6);
+
+    computerTurn();
+  });
+
+  $(".box7").click(function() { //1    
+    $(".box7").text(playerSymbol);
+    $(".box7").addClass("not-active");
+    used.push(7);
+    playerArr.push(7);
+
+    computerTurn();
+  });
+
+  $(".box8").click(function() { //1    
+    $(".box8").text(playerSymbol);
+    $(".box8").addClass("not-active");
+    used.push(8);
+    playerArr.push(8);
+
+    computerTurn();
+
+  });
+
+  $(".box9").click(function() { //1    
+    $(".box9").text(playerSymbol);
+    $(".box9").addClass("not-active");
+    used.push(9);
+    playerArr.push(9);
+
+    computerTurn();
+  });
+
+});
+</script>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>JS Calculator</title>
+  <meta name="description" content="">
+  <meta name="author" content="Overlord">
+
+  <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/714f03981d.js"></script>
+  
+  
+  <style>
+  body{
+  	background:lightgrey;
+  }
+  	.calculator{
+  width:350px;
+  height:430px;
+  background:skyblue;
+  margin:60px auto;
+  border-radius:15px;
+  -webkit-box-shadow: 0px 0px 10px dimgrey;
+  box-shadow: 0px 0px 10px dimgrey;
+    
+}
+.keys{
+  width:77px;
+  height:77px;
+  font-size:24px;
+  margin-top:5px;
+  background:azure;
+  border-radius:10%;
+}
+.keys2{
+  width:77px;
+  height:63px;
+  font-size:24px;
+  margin-bottom:2px;
+  background:lightsteelblue;
+  border-radius:10%;
+
+}
+.smallButtons{
+  float:right;
+  margin-top:5px;
+
+  
+}
+.textBox{
+  width:320px;
+  height:50px;
+  background:#b8b894;
+  border:1px solid #b8b894;
+  border-radius:5px;
+  margin:0 auto;
+  margin-top:15px;
+  text-align:right;
+  font-size:32px;
+  padding-right:10px;
+
+}
+.title{
+  text-align:center;
+  margin-top:5px;
+}
+
+
+  	
+  	
+  	
+  </style>
+  
+  
+  
+  
+  
+  
+</head>
+
+<body>
+  <div class="calculator container">
+  <p class="title">Calculator</p>
+  <div class="textBox">
+    0
+  </div>
+
+
+  <button class="seven keys">7</button>
+  <button class="eight keys">8</button>
+  <button class="nine keys">9</button>
+  
+  <div class="smallButtons">
+    <button class="clear keys2">C</button></br>
+  <button class="divide keys2">/</button></br>
+  <button class="multiply keys2">*</button></br>
+<button class="add keys2">+</button></br>
+  <button class="subtract keys2">-</button>
+  </div>
+
+  </br>
+  
+
+  <button class="four keys">4</button>
+  <button class="five keys">5</button>
+  <button class="six keys">6</button>
+
+ </br>
+  
+      
+
+  <button class="one keys">1</button>
+  <button class="two keys">2</button>
+  <button class="three keys">3</button>
+
+ </br>
+        
+
+  <button class="decimal keys">.</button>
+  <button class="zero keys">0</button>
+    <button class="equal keys">=</button>
+    
+  
+</div>
+
+<div class="footer text-center">
+  <p style="color:black;">Designed and developed by Huy Nguyen © 2016. All rights reserved.</p>
+</div>
+</body>
+</html>
+
+
+
+<script>
+	var screen="";
+
+
+//-------- Operators --------
+$(".add").click(function(){ //+
+  if(isNaN(screen.slice(-1)) == false){
+    screen+="+"
+  }
+  $(".textBox").text(screen);
+      
+});
+$(".subtract").click(function(){ //-
+  if(isNaN(screen.slice(-1)) == false){
+    screen+="-"
+  }
+  $(".textBox").text(screen);
+      
+});
+$(".multiply").click(function(){ //*
+  if(isNaN(screen.slice(-1)) == false){
+    screen+="*"
+  }
+  
+  $(".textBox").text(screen);
+      
+});
+$(".divide").click(function(){ // /
+  if(isNaN(screen.slice(-1)) == false){
+    screen+="/"
+  }
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".equal").click(function(){ //=
+  
+  screen = eval(screen);
+  
+  $(".textBox").text(screen);
+      
+});
+
+//---------------------
+
+
+$(".one").click(function(){
+  
+  screen+="1"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".two").click(function(){
+  
+  screen+="2"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".three").click(function(){
+  
+  screen+="3"
+  
+  $(".textBox").text(screen);
+      
+});
+$(".four").click(function(){
+  
+  screen+="4"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".five").click(function(){
+  
+  screen+="5"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".six").click(function(){
+  
+  screen+="6"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".seven").click(function(){
+  
+  screen+="7"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".eight").click(function(){
+  
+  screen+="8"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".nine").click(function(){
+  
+  screen+="9"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".clear").click(function(){
+  
+  screen="0"
+  
+  $(".textBox").text(screen);
+      
+});
+
+$(".decimal").click(function(){
+  
+  screen+="."
+  
+  $(".textBox").text(screen);
+      
+});
+
+
+
+
+	
+</script>
+
+
+
