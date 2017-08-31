@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Huy Nguyen - Portfolio</title>
+  <meta name="description" content="">
+  <meta name="author" content="Overlord">
+
+  <meta name="viewport" content="width=device-width; initial-scale=.4">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/714f03981d.js"></script>
+  
+  <style>
+  	@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+#parent{
+  margin: auto;
+  padding:30px 5% 30px 5%;
+
+
+
+
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 0px 10px dimgrey;
+    box-shadow: 0px 0px 10px dimgrey;
+    text-align:left;
+    color:black;
+    font-family: Verdana;
+    background:lightgrey;
+    padding-left:10%; 
+    margin-bottom:75px;
+
+
+  
+
+}
+.entry {
+    -webkit-box-shadow: 0px 0px 10px dimgrey;
+    box-shadow: 0px 0px 10px dimgrey;
+    text-align:left;
+    color:black;
+    font-family: Verdana;
+    padding:10px;
+    margin:0px auto;
+    margin-bottom:75px;
+    background:lightgrey;
+    width:40%;
+    height:auto;
+  
+
+}
+
+.entry:hover{
+  opacity:.5;
+  cursor:pointer;
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border:1px grey solid;
+
+
+}
+body{
+    background-color:#999999;
+}
+
+.oneSize{
+  font-size:130%;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+.white{
+  color:white;
+  font-size:80%;
+}
+h1{
+  content: '';
+  display: block;
+  border-bottom: 1px solid #DFDFDF;
+  padding-top:5px;
+  font-family: 'Montserrat', serif;
+  font-weight: 700;
+}
+.under{
+  font-family: 'Cardo', serif;
+  font-size: 19px;
+  line-height: 1.35em;
+}
+
+.btn-gplus{
+  background-color:#DD4B39;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-email{
+  background-color:#4B515D;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-fcc{
+  background-color:#006400;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
+.btn-codePen{
+  background-color:black;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
+
+.press:hover {
+    box-shadow: 0 9px 12px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.press:active {
+
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
+  
+}
+figcaption{
+  margin-bottom:5px;
+}
+#mynavbar{
+  padding:5px;
+  padding-left:6%;
+  font-size:18px;
+  margin-left:7%;
+  
+  
+}
+
+
+.cert{
+	height:auto;
+	max-width:50%;
+	
+	margin-bottom:50px;
+	left:30px;
+	-webkit-box-shadow: 0px 0px 10px dimgrey;
+    box-shadow: 0px 0px 10px dimgrey;
+}
+.cert:hover{
+	opacity:.8;
+  	cursor:pointer;
+  	-webkit-box-shadow: 0px 0px 15px dimgrey;
+    box-shadow: 0px 0px 15px dimgrey;
+	
+}
+
+.center{
+	text-align:center;
+}
+
+  </style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <body>
+
+
+    
+
+
+      <div id="mynavbar" class="navbar-header pull-left">
+
+        <ul class="nav nav-pills">
+          <li id="home"><a href="#">Home</a></li>
+          <li id="about"><a href="#abt">About</a></li>
+          <li id="portfolio"><a href="#port">Portfolio</a></li>
+          <li id="contact"><a href="#cont">Contact</a></li>
+        </ul>
+      </div>
+    
+</nav>
+</br>
+</br>
+
+<!-- About -->
+
+<div id="parent" class="container-fluid">
+  <div id="abt" style="background:lightgrey;" class="shadow">
+    </br>
+    </br>
+    
+
+      <div class="row">
+        <div class="col-xs-3">
+          <h1>Huy Nguyen</h1>
+          <p class="under"><i>A little background.</i></p>
+        </div>
+
+      </div>
+      </br>
+      <div class="row center">
+        
+        
+ <a href="https://www.freecodecamp.com/swiftstrife/front-end-certification" target="_blank">
+          <div >
+            <img class="cert" src="cert.png" alt="certificiate">
+          </div>
+        </a>
+
+        
+      </div>
+      
+    
+  </div>
+  
+ 
+
+  <!-- Portfolio -->
+
+  <div id="port" class="shadow" style="background:snow;">
+    </br>
+    </br>
+ 
+
+      <div class="row">
+        <div class="col-xs-3">
+          <h1>Portfolio</h1>
+          <p class="under"><i>Some of my most recent work.</i></p>
+        </div>
+      </div>
+      </br>
+
+      <!----pictures------>
+      <div class="row">
+        <a href="http://hosting.otterlabs.org/nguy7791/CST336/Portfolio/simon.html" target="_blank">
+          <div class="image col-xs-2 entry">
+            <figcaption><b>Simon Game</b> - HTML, CSS, JavaScript, jQuery</figcaption><img src="simon.png" alt="clock">
+          </div>
+        </a>
+<div class="col-xs-1">
+        </div>
+
+
+        <a href="http://hosting.otterlabs.org/nguy7791/CST336/Portfolio/tictactoe.html" target="_target">
+          <div class="image col-xs-2 entry">
+            <figcaption><b>Tic-Tac-Toe</b> - HTML, CSS, JavaScript, jQuery</figcaption><img src="tictactoe.png" alt="calc">
+          </div>
+        </a>
+
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <div class="row">
+        <a href="http://hosting.otterlabs.org/nguy7791/CST336/Portfolio/pomodoro.html" target="_blank">
+          <div class="image col-xs-2 entry">
+            <figcaption><b>Pomodoro Clock</b> - HTML, CSS, JavaScript</figcaption><img src="pomodoro.png" alt="clock">
+          </div>
+        </a>
+<div class="col-xs-1">
+        </div>
+
+
+        <a href="http://hosting.otterlabs.org/nguy7791/CST336/Portfolio/calculator.html" target="_target">
+          <div class="image col-xs-2 entry">
+            <figcaption><b>Calculator</b> - HTML, CSS, JavaScript</figcaption><img src="calculator.png" alt="calc">
+          </div>
+        </a>
+
+      </div>
+      
+      
+      
+      
+      
+      <div class="row">
+        <a href="http://codepen.io/swiftstrife/full/AXkGJw/" target="_blank">
+          <div class="image col-xs-2 entry">
+            <figcaption><b>Twitch Viewer</b> - HTML, CSS, JavaScript</figcaption><img src="http://i.imgur.com/WOYTaWe.png" alt="twitchViewer">
+          </div>
+        </a>
+<div class="col-xs-1">
+        </div>
+
+
+        <a href="http://codepen.io/swiftstrife/full/xONYwp/" target="_target">
+          <div class="image col-xs-2 entry">
+            <figcaption><b>Wikipedia Viewer</b> - HTML, CSS, JavaScript</figcaption><img src="http://i.imgur.com/QL5H4ke.png" alt="wiki">
+          </div>
+        </a>
+
+      </div>
+
+
+      <div class="row">
+        <a href="http://codepen.io/swiftstrife/full/YWbAQB/" target="_blank">
+          <div class="image col-xs-5 entry">
+            <figcaption><b>Local Weather App</b> - HTML, CSS, JavaScript</figcaption><img src="http://i.imgur.com/Fr70UJN.jpg" alt="weather">
+          </div>
+        </a>
+
+        <div class="col-xs-1">
+        </div>
+
+        <a href="http://hosting.otterlabs.org/nguy7791/CST336/Labs/loginOneBit.php" target="_blank">
+          <div class="image col-xs-5 entry">
+
+            <figcaption><b>Pokemon Location Database</b> - HTML, CSS, PHP, SQL</figcaption><img src="http://i.imgur.com/o3eRsJV.png" alt="pokemonQuery">
+          </div>
+        </a>
+
+
+      </div>
+
+
+      <div class="row">
+        <a href="http://hosting.otterlabs.org/nguy7791/CST336/Module%207/assignment7.html" target="_target">
+          <div class="image col-xs-5 entry">
+            <figcaption><b>Random Quote Generator</b> - HTML, CSS, JavaScript, AJAX</figcaption><img src="http://i.imgur.com/WaraLf5.jpg" alt="quoteGen">
+          </div>
+        </a>
+
+
+        <div class="col-xs-1">
+        </div>
+
+        <a href="http://codepen.io/swiftstrife/full/zBXNqQ" target="_blank">
+          <div class="image col-xs-5 entry">
+            <figcaption><b>Tribute</b> - HTML, CSS</figcaption><img src="http://i.imgur.com/bwK918i.png" alt="tribute">
+
+          </div>
+        </a>
+      </div>
+
+    
+
+
+    </br>
+
+  </div>
+
+  <!----Contact-->
+
+  <div id="cont" style="background:lightgrey;" class="shadow">
+    </br>
+    </br>
+    
+      <div class="row">
+        <div class="col-xs-3">
+          <h1>Contact</h1>
+          <p class="under"><i>Drop in and say hello!</i></p>
+        </div>
+      </div>
+      </br>
+
+      <a type="button" class="press btn btn-gplus" href="https://plus.google.com/u/0/115057397975119247790" target="_blank"><i class="fa fa-google-plus left" ></i> Google +</a>
+
+      <a type="button" class="press btn btn-email" href="mailto:huyndinh@gmail.com" target="_blank"><i class="fa fa-envelope left"></i> Email</a>
+
+      <a type="button" class="press btn btn-fcc" href="https://www.freecodecamp.com/swiftstrife" target="_blank"><i class="fa fa-fire left"></i> FreeCodeCamp</a>
+
+      <a type="button" class="press btn btn-codePen" href="http://codepen.io/swiftstrife/" target="_blank"><i class="fa fa-codepen left"></i> CodePen</a>
+
+
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+      </br>
+
+
+    
+  </div>
+</div>
+</div>
+
+
+<footer>
+  <div class "container col-xs-11" style="text-align:center; background-color:#999999;">
+
+    <p class="white">Designed and developed by Huy Nguyen © 2016. All rights reserved.</p>
+
+
+</footer>
+</div>
+
+
+
+<script>
+	$("#about").click(function() {
+    $("#about").addClass("active");
+    $("#portfolio").removeClass("active");
+    $("#contact").removeClass("active");
+    $("#home").removeClass("active");
+});
+$("#portfolio").click(function() {
+    $("#portfolio").addClass("active");
+    $("#about").removeClass("active");
+    $("#contact").removeClass("active");
+    $("#home").removeClass("active");
+});
+$("#contact").click(function() {
+    $("#contact").addClass("active");
+    $("#portfolio").removeClass("active");
+    $("#about").removeClass("active");
+    $("#home").removeClass("active");
+});
+$("#home").click(function() {
+    $("#home").addClass("active");
+    $("#contact").removeClass("active");
+    $("#portfolio").removeClass("active");
+    $("#about").removeClass("active");
+});
+	
+
+	
+</script>
+
+
+
+
+</body>
+</html>
