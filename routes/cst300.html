@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Huy Nguyen - Portfolio</title>
+  <meta name="description" content="">
+  <meta name="author" content="Overlord">
+
+  <meta name="viewport" content="width=device-width, initial-scale=.4">
+
+  <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+ <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/714f03981d.js"></script>
+  
+  <style>
+  	@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+#parent{
+  margin: auto;
+  padding:30px 5% 30px 5%;
+
+
+
+
+}
+
+.shadow {
+    -webkit-box-shadow: 0px 0px 10px dimgrey;
+    box-shadow: 0px 0px 10px dimgrey;
+    text-align:left;
+    color:black;
+    font-family: Verdana;
+    background:lightgrey;
+    padding-left:10%; 
+    margin-bottom:75px;
+
+
+  
+
+}
+.entry {
+    -webkit-box-shadow: 0px 0px 10px dimgrey;
+    box-shadow: 0px 0px 10px dimgrey;
+    text-align:left;
+    color:black;
+    font-family: Verdana;
+    padding:10px;
+    margin:0px auto;
+    margin-bottom:75px;
+    background:lightgrey;
+    width:40%;
+    height:auto;
+  
+
+}
+
+.entry:hover{
+  opacity:.5;
+  cursor:pointer;
+
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border:1px grey solid;
+
+
+}
+body{
+    background-color:#999999;
+}
+
+.oneSize{
+  font-size:130%;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+.white{
+  color:white;
+  font-size:80%;
+}
+h1{
+  content: '';
+  display: block;
+  border-bottom: 1px solid #DFDFDF;
+  padding-top:5px;
+  font-family: 'Montserrat', serif;
+  font-weight: 700;
+}
+.under{
+  font-family: 'Cardo', serif;
+  font-size: 19px;
+  line-height: 1.35em;
+}
+
+.btn-gplus{
+  background-color:#DD4B39;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-email{
+  background-color:#4B515D;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn-fcc{
+  background-color:#006400;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
+.btn-codePen{
+  background-color:black;
+  color:white;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+
+
+.press:hover {
+    box-shadow: 0 9px 12px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.press:active {
+
+  box-shadow: 0 2px #666;
+  transform: translateY(1px);
+  
+}
+figcaption{
+  margin-bottom:5px;
+}
+#mynavbar{
+  padding:5px;
+  padding-left:6%;
+  font-size:18px;
+  margin-left:7%;
+  
+  
+}
+
+
+.cert{
+	height:auto;
+	max-width:50%;
+	
+	margin-bottom:50px;
+	left:30px;
+	-webkit-box-shadow: 0px 0px 10px dimgrey;
+    box-shadow: 0px 0px 10px dimgrey;
+}
+.cert:hover{
+	opacity:.8;
+  	cursor:pointer;
+  	-webkit-box-shadow: 0px 0px 15px dimgrey;
+    box-shadow: 0px 0px 15px dimgrey;
+	
+}
+
+.center{
+	text-align:center;
+}
+
+.indent {
+    text-indent: 40px;
+}
+
+  </style>
+  
+ 
+  
+  
+  
+</head>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <body>
+      <div id="mynavbar" class="navbar-header pull-left">
+
+        <ul class="nav nav-pills">
+          <li id="home"><a href="../index.html">Back</a></li>
+        </ul>
+      </div>
+    
+</nav>
+
+<iframe style="width: 900px; height: 900px;" src="CST361.pdf" height="240" width="320" frameborder="0"></iframe>
+
+
+<footer>
+  <div class "container col-xs-11" style="text-align:center; background-color:#999999;">
+
+    <p class="white">Designed and developed by Huy Nguyen © 2016. All rights reserved.</p>
+
+
+</footer>
+</div>
+
+
+
+
+</body>
+</html>
